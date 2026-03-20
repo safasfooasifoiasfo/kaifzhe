@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAIFZHE.COM 🔥</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Unbounded:wght@400;700;900&family=Russo+One&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --fire: #ff4800;
+      --fire2: #ffae00;
+      --fire3: #ff6b00;
+      --bg: #0a0a0a;
+      --bg2: #111111;
+      --bg3: #161616;
+      --text: #f5f0e8;
+      --accent: #ffae00;
+      --muted: #888;
+      --card: #1a1a1a;
+      --border: #2a2a2a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Unbounded', sans-serif;
+      overflow-x: hidden;
+      cursor: default;
+    }
+
+    /* GRAIN OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.5;
+    }
+
+    /* FIRE CURSOR */
+    body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E🔥%3C/text%3E%3C/svg%3E") 16 28, auto; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 80% 60% at 50% 120%, rgba(255,72,0,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 20%, rgba(255,174,0,0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 30% at 20% 30%, rgba(255,72,0,0.07) 0%, transparent 50%);
+    }
+
+    .fire-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      font-size: clamp(1rem, 3vw, 2rem);
+      animation: floatFire linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes floatFire {
+      0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 0.6; }
+      100% { transform: translateY(-10vh) rotate(20deg); opacity: 0; }
+    }
+
+    .logo-wrap {
+      position: relative;
+      z-index: 2;
+      animation: dropIn 0.9s cubic-bezier(0.16,1,0.3,1) both;
+    }
+
+    @keyframes dropIn {
+      from { transform: translateY(-80px) scale(0.8); opacity: 0; }
+      to   { transform: none; opacity: 1; }
+    }
+
+    .logo-kk {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 20vw, 14rem);
+      line-height: 0.9;
+      letter-spacing: -2px;
+      background: linear-gradient(135deg, #ffae00 0%, #ff6b00 40%, #ff4800 70%, #ff2200 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+      filter: drop-shadow(0 0 60px rgba(255,72,0,0.5)) drop-shadow(0 0 120px rgba(255,72,0,0.2));
+      position: relative;
+    }
+
+    .logo-kk .emoji {
+      -webkit-text-fill-color: initial;
+      filter: none;
+    }
+
+    .logo-sub {
+      font-size: clamp(0.7rem, 2vw, 1rem);
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      animation: fadeIn 1.2s 0.4s both;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .hero-tagline {
+      font-family: 'Russo One', sans-serif;
+      font-size: clamp(1rem, 3.5vw, 1.8rem);
+      color: var(--text);
+      opacity: 0.9;
+      margin-top: 2rem;
+      animation: fadeIn 1s 0.7s both;
+      max-width: 600px;
+      line-height: 1.4;
+    }
+
+    .hero-tagline span {
+      background: linear-gradient(90deg, var(--fire2), var(--fire));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      color: var(--muted);
+      animation: bounce 2s infinite, fadeIn 1s 1.5s both;
+      z-index: 2;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      background: linear-gradient(90deg, var(--fire2), var(--fire));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--fire2); }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--fire);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 1;
+      margin-bottom: 3rem;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 0;
+    }
+
+    /* ===== ПОЧЕМУ КАЙФ ЖЕ ===== */
+    .kaif-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .kaif-card {
+      background: var(--card);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .kaif-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--fire), var(--fire2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .kaif-card:hover::before { transform: scaleX(1); }
+    .kaif-card:hover { background: #1e1e1e; }
+
+    .kaif-card .q {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      color: var(--fire);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .kaif-card .fire-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--fire2), var(--fire));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .kaif-card h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+
+    .kaif-card p {
+      font-size: 0.7rem;
+      line-height: 1.8;
+      color: #aaa;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 400;
+    }
+
+    /* ===== WORKERS ===== */
+    .workers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .worker-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .worker-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--fire3);
+    }
+
+    .worker-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--fire), var(--fire2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .worker-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .worker-role {
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--fire2);
+      margin-bottom: 0.8rem;
+    }
+
+    .worker-bio {
+      font-size: 0.65rem;
+      line-height: 1.7;
+      color: #888;
+    }
+
+    .worker-status {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* ===== ANGEL DRAINER JOKES ===== */
+    .jokes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+
+    .joke-item {
+      padding: 1.8rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      transition: background 0.2s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .joke-item::after {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--fire);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.3s;
+    }
+
+    .joke-item:hover { background: #161616; }
+    .joke-item:hover::after { transform: scaleY(1); }
+
+    .joke-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: var(--border);
+      min-width: 50px;
+      line-height: 1;
+    }
+
+    .joke-text {
+      font-size: 0.8rem;
+      line-height: 1.8;
+      color: #ccc;
+    }
+
+    .joke-text strong {
+      color: var(--fire2);
+    }
+
+    /* ===== G-STAR ===== */
+    .gstar-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 640px) {
+      .gstar-wrap { grid-template-columns: 1fr; }
+    }
+
+    .gstar-left {
+      position: relative;
+    }
+
+    .gstar-big {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 15vw, 9rem);
+      line-height: 0.9;
+      background: linear-gradient(135deg, var(--fire2), var(--fire));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .gstar-right p {
+      font-size: 0.75rem;
+      line-height: 2;
+      color: #bbb;
+      margin-bottom: 1rem;
+    }
+
+    .gstar-badge {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--fire), var(--fire2));
+      color: #000;
+      font-size: 0.6rem;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.4em 1em;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== ТОППЕР ===== */
+    .toppor-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--fire);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .toppor-header {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+
+    .toppor-text {
+      font-size: 0.75rem;
+      line-height: 2;
+      color: #bbb;
+    }
+
+    .toppor-text .highlight {
+      color: var(--fire2);
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, var(--fire), transparent);
+    }
+
+    .t-item {
+      position: relative;
+      padding: 1.2rem 0 1.2rem 1.5rem;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .t-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 1.5rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--fire);
+      box-shadow: 0 0 12px var(--fire);
+    }
+
+    .t-date {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      color: var(--fire);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .t-text {
+      font-size: 0.72rem;
+      line-height: 1.7;
+      color: #bbb;
+    }
+
+    /* ===== ЛУННАЯ ОПЛАТА ===== */
+    .luna-box {
+      background: linear-gradient(135deg, #0d0d1a, #0a0a0a);
+      border: 1px solid #1a1a2e;
+      padding: 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .luna-box::before {
+      content: '🌙';
+      position: absolute;
+      font-size: 15rem;
+      top: -3rem;
+      right: -3rem;
+      opacity: 0.03;
+      pointer-events: none;
+    }
+
+    .luna-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      background: linear-gradient(135deg, #a78bfa, #60a5fa, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.5rem;
+    }
+
+    .luna-text {
+      font-size: 0.75rem;
+      line-height: 2;
+      color: #9090bb;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .luna-rules {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .luna-rule {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(167,139,250,0.15);
+      padding: 1.2rem;
+      font-size: 0.65rem;
+      line-height: 1.7;
+      color: #888;
+      text-align: left;
+    }
+
+    .luna-rule .rnum {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      background: linear-gradient(135deg, #a78bfa, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+      background: #050505;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      background: linear-gradient(90deg, var(--fire2), var(--fire));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-text {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      color: #444;
+      text-transform: uppercase;
+    }
+
+    /* ===== FIRE BADGE ===== */
+    .fire-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,72,0,0.1);
+      border: 1px solid rgba(255,72,0,0.3);
+      color: var(--fire2);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4em 0.8em;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    /* HORIZONTAL MARQUEE */
+    .marquee-wrap {
+      overflow: hidden;
+      background: var(--fire);
+      padding: 0.7rem 0;
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.15em;
+      color: #000;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== СПЛЭШ ГЕЙТ ===== -->
+<div id="gate" style="
+  position:fixed; inset:0; z-index:99999;
+  background:#080808;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  font-family:'Unbounded',sans-serif;
+  padding:2rem;
+">
+  <!-- Step 1: email + captcha -->
+  <div id="step-1" style="width:100%; max-width:420px;">
+    <div style="font-family:'Bebas Neue',sans-serif; font-size:3rem; background:linear-gradient(90deg,#ffae00,#ff4800); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:0.3rem;">KAIFZHE.COM</div>
+    <div style="font-size:0.55rem; letter-spacing:0.3em; color:#444; text-transform:uppercase; margin-bottom:2.5rem;">Верификация · Шаг 1 из 2</div>
+
+    <label style="font-size:0.6rem; letter-spacing:0.2em; color:#555; text-transform:uppercase; display:block; margin-bottom:0.5rem;">Введите вашу почту</label>
+    <input id="email-input" type="email" placeholder="you@example.com" style="
+      width:100%; background:#111; border:1px solid #222; color:#ccc;
+      font-family:'Unbounded',sans-serif; font-size:0.7rem;
+      padding:0.8rem 1rem; outline:none; margin-bottom:1.5rem;
+      transition:border-color 0.2s;
+    " onfocus="this.style.borderColor='#ff4800'" onblur="this.style.borderColor='#222'" />
+
+    <label style="font-size:0.6rem; letter-spacing:0.2em; color:#555; text-transform:uppercase; display:block; margin-bottom:0.8rem;">Решите капчу</label>
+    <div id="captcha-box" style="
+      background:#111; border:1px solid #222; padding:1.2rem;
+      display:flex; align-items:center; gap:1rem; margin-bottom:2rem; cursor:pointer;
+      transition:border-color 0.2s;
+    " onclick="solveCaptcha()" onmouseenter="this.style.borderColor='#333'" onmouseleave="this.style.borderColor='#222'">
+      <div id="captcha-check" style="
+        width:22px; height:22px; border:2px solid #333; border-radius:3px;
+        display:flex; align-items:center; justify-content:center; flex-shrink:0;
+        transition:all 0.3s;
+      "></div>
+      <span style="font-size:0.65rem; color:#555;">Я не робот</span>
+      <span style="font-size:0.5rem; color:#2a2a2a; margin-left:auto; letter-spacing:0.1em;">reCAPTCHA v9</span>
+    </div>
+
+    <!-- loading bar (hidden) -->
+    <div id="captcha-loading" style="display:none; margin-bottom:2rem;">
+      <div style="font-size:0.55rem; color:#444; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.5rem;">Проверяем...</div>
+      <div style="background:#111; border:1px solid #1a1a1a; height:4px; border-radius:2px; overflow:hidden;">
+        <div id="load-bar" style="height:100%; width:0%; background:linear-gradient(90deg,#ff4800,#ffae00); transition:width 0.1s linear;"></div>
+      </div>
+    </div>
+
+    <!-- fraud warning (hidden) -->
+    <div id="fraud-warn" style="display:none; background:#120800; border:1px solid #3a1500; padding:1rem 1.2rem; margin-bottom:1.5rem; position:relative;">
+      <button onclick="closeFraud()" style="position:absolute;top:0.5rem;right:0.7rem;background:none;border:none;color:#444;font-size:1rem;cursor:pointer;line-height:1;">×</button>
+      <div style="font-size:0.6rem; letter-spacing:0.2em; color:#ff4800; text-transform:uppercase; margin-bottom:0.4rem;">⚠ Детектор Фрода</div>
+      <div style="font-size:0.72rem; color:#cc6600; line-height:1.7;">Фродный чет айпишник у тя братан 👀</div>
+    </div>
+
+    <button onclick="goStep2()" id="btn-step1" style="
+      width:100%; background:linear-gradient(90deg,#ff4800,#ffae00);
+      border:none; color:#000; font-family:'Bebas Neue',sans-serif;
+      font-size:1.3rem; padding:0.8rem; cursor:pointer; letter-spacing:0.1em;
+      opacity:0.4; pointer-events:none; transition:opacity 0.3s;
+    ">ВОЙТИ →</button>
+  </div>
+
+  <!-- Step 2: network choice -->
+  <div id="step-2" style="display:none; width:100%; max-width:420px;">
+    <div style="font-family:'Bebas Neue',sans-serif; font-size:3rem; background:linear-gradient(90deg,#ffae00,#ff4800); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:0.3rem;">KAIFZHE.COM</div>
+    <div style="font-size:0.55rem; letter-spacing:0.3em; color:#444; text-transform:uppercase; margin-bottom:2.5rem;">Верификация · Шаг 2 из 2</div>
+
+    <label style="font-size:0.6rem; letter-spacing:0.2em; color:#555; text-transform:uppercase; display:block; margin-bottom:0.8rem;">Ваша темка</label>
+
+    <!-- Kartatai -->
+    <label id="opt-kartatai" onclick="selectNet('kartatai')" style="
+      display:flex; align-items:center; gap:1rem;
+      background:#111; border:1px solid #222; padding:1rem 1.2rem;
+      margin-bottom:0.6rem; cursor:pointer; transition:border-color 0.2s;
+    ">
+      <div id="dot-kartatai" style="width:16px;height:16px;border:2px solid #333;border-radius:50%;flex-shrink:0;transition:all 0.2s;"></div>
+      <div>
+        <div style="font-size:0.7rem; color:#ccc; margin-bottom:0.15rem;">Kartatai</div>
+        <div style="font-size:0.5rem; letter-spacing:0.15em; color:#444; text-transform:uppercase;">Картатайская область · темки норм</div>
+      </div>
+    </label>
+
+    <!-- K****** -->
+    <label id="opt-k6" onclick="selectNet('k6')" style="
+      display:flex; align-items:center; gap:1rem;
+      background:#111; border:1px solid #222; padding:1rem 1.2rem;
+      margin-bottom:0.6rem; cursor:pointer; transition:border-color 0.2s;
+    ">
+      <div id="dot-k6" style="width:16px;height:16px;border:2px solid #333;border-radius:50%;flex-shrink:0;transition:all 0.2s;"></div>
+      <div>
+        <div style="font-size:0.7rem; color:#ccc; margin-bottom:0.15rem;">K******</div>
+        <div style="font-size:0.5rem; letter-spacing:0.15em; color:#444; text-transform:uppercase;">Приватка братика · проверенная</div>
+      </div>
+    </label>
+
+    <!-- Паблик -->
+    <label id="opt-public" onclick="selectNet('public')" style="
+      display:flex; align-items:center; gap:1rem;
+      background:#111; border:1px solid #222; padding:1rem 1.2rem;
+      margin-bottom:0.6rem; cursor:pointer; transition:border-color 0.2s;
+    ">
+      <div id="dot-public" style="width:16px;height:16px;border:2px solid #333;border-radius:50%;flex-shrink:0;transition:all 0.2s;"></div>
+      <div>
+        <div style="font-size:0.7rem; color:#666; margin-bottom:0.15rem;">Паблик помойка</div>
+        <div style="font-size:0.5rem; letter-spacing:0.15em; color:#333; text-transform:uppercase;">Не рекомендуется · но воля твоя</div>
+      </div>
+    </label>
+
+    <!-- G-STAR (locked) -->
+    <label style="
+      display:flex; align-items:center; gap:1rem;
+      background:#0d0d0d; border:1px solid #1a1a1a;
+      padding:1rem 1.2rem; margin-bottom:1.5rem;
+      cursor:not-allowed; opacity:0.5; position:relative;
+    ">
+      <div style="width:16px;height:16px;border:2px solid #222;border-radius:50%;flex-shrink:0; background:#111;"></div>
+      <div style="flex:1;">
+        <div style="font-size:0.7rem; color:#444; margin-bottom:0.15rem; text-decoration:line-through;">G-STAR *******</div>
+        <div style="font-size:0.5rem; letter-spacing:0.15em; color:#2a2a2a; text-transform:uppercase;">Доступно только Одному пацыку епт</div>
+      </div>
+      <div style="
+        font-size:0.45rem; letter-spacing:0.2em; color:#222;
+        border:1px solid #1a1a1a; padding:0.2em 0.5em; text-transform:uppercase;
+        flex-shrink:0;
+      ">🔒 НЕДОСТУПНО ДЛЯ ВАС</div>
+    </label>
+
+    <!-- divine advice (hidden) -->
+    <div id="divine-warn" style="display:none; background:#0d0d14; border:1px solid #1a1a3a; padding:1rem 1.2rem; margin-bottom:1.5rem;">
+      <div style="font-size:0.6rem; letter-spacing:0.2em; color:#6060cc; text-transform:uppercase; margin-bottom:0.4rem;">💡 Совет Картатайского Мудреца</div>
+      <div style="font-size:0.72rem; color:#8888cc; line-height:1.8;">Братан лучше заводи в норм темку такто.<br><span style="font-size:0.6rem; color:#444;">Совет божий. Бесплатно.</span></div>
+    </div>
+
+    <button onclick="enterSite()" id="btn-enter" style="
+      width:100%; background:linear-gradient(90deg,#ff4800,#ffae00);
+      border:none; color:#000; font-family:'Bebas Neue',sans-serif;
+      font-size:1.3rem; padding:0.8rem; cursor:pointer; letter-spacing:0.1em;
+      opacity:0.4; pointer-events:none; transition:opacity 0.3s;
+    ">ЗАЙТИ 🔥</button>
+  </div>
+</div>
+
+<style>
+  #gate { transition: opacity 0.5s; }
+</style>
+
+<script>
+  // Step 1 logic
+  let captchaDone = false;
+  let emailOk = false;
+
+  document.getElementById('email-input').addEventListener('input', function() {
+    emailOk = this.value.includes('@') && this.value.length > 5;
+    checkStep1();
+  });
+
+  function checkStep1() {
+    const btn = document.getElementById('btn-step1');
+    if (captchaDone && emailOk) {
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+    }
+  }
+
+  function solveCaptcha() {
+    if (captchaDone) return;
+    const box = document.getElementById('captcha-box');
+    const check = document.getElementById('captcha-check');
+    const loading = document.getElementById('captcha-loading');
+    const bar = document.getElementById('load-bar');
+
+    box.style.pointerEvents = 'none';
+    loading.style.display = 'block';
+
+    let w = 0;
+    const iv = setInterval(() => {
+      w += Math.random() * 18 + 4;
+      if (w >= 100) { w = 100; clearInterval(iv); finishCaptcha(); }
+      bar.style.width = w + '%';
+    }, 80);
+  }
+
+  function finishCaptcha() {
+    const check = document.getElementById('captcha-check');
+    const loading = document.getElementById('captcha-loading');
+    const fraud = document.getElementById('fraud-warn');
+
+    loading.style.display = 'none';
+    check.style.background = '#22c55e';
+    check.style.borderColor = '#22c55e';
+    check.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="#000" stroke-width="2" fill="none"/></svg>';
+
+    // Show fraud warning after short delay
+    setTimeout(() => {
+      fraud.style.display = 'block';
+    }, 400);
+
+    captchaDone = true;
+    checkStep1();
+  }
+
+  function closeFraud() {
+    document.getElementById('fraud-warn').style.display = 'none';
+  }
+
+  function goStep2() {
+    document.getElementById('step-1').style.display = 'none';
+    document.getElementById('step-2').style.display = 'block';
+  }
+
+  // Step 2 logic
+  let selectedNet = null;
+
+  function selectNet(val) {
+    selectedNet = val;
+    ['kartatai','k6','public'].forEach(k => {
+      const dot = document.getElementById('dot-' + k);
+      const lbl = document.getElementById('opt-' + k);
+      dot.style.background = k === val ? '#ff4800' : '';
+      dot.style.borderColor = k === val ? '#ff4800' : '#333';
+      lbl.style.borderColor = k === val ? '#ff4800' : '#222';
+    });
+
+    const warn = document.getElementById('divine-warn');
+    warn.style.display = val === 'public' ? 'block' : 'none';
+
+    const btn = document.getElementById('btn-enter');
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'auto';
+  }
+
+  function enterSite() {
+    const gate = document.getElementById('gate');
+    gate.style.opacity = '0';
+    setTimeout(() => gate.style.display = 'none', 500);
+  }
+</script>
+
+
+<div class="fire-particles" id="particles"></div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <span class="marquee-track">
+    🔥 КАЙФ ЖЕ &nbsp;•&nbsp; KAIFISH CONFIRMED &nbsp;•&nbsp; G-STAR ТОЛЬКО ЧЕРЕЗ ШЕФА ПАЛОЧНИКА &nbsp;•&nbsp; ЛУННАЯ ОПЛАТА АКТИВНА &nbsp;•&nbsp; ANGELDRAINER ВЕРЕН GBUYING &nbsp;•&nbsp; ЛОЛЗ УЖЕ НЕ ТЕМКА &nbsp;•&nbsp; КАРТАТАЙСКАЯ ОБЛАСТЬ — НОВЫЕ ТЕМКИ &nbsp;•&nbsp; ТОППЕР ЛЕЧИТСЯ ЛЕТУЧИМИ ТЕМКАМИ &nbsp;•&nbsp; БЛОКЧЕЙН УЖЕ НЕ ТОТ &nbsp;•&nbsp; ГОУДЕДИ БОЛЬШЕ НЕ ХОДИТ &nbsp;•&nbsp; ПРОКСИ 9 = 6 &nbsp;•&nbsp; БУРМАЛДА НОРМ ТЕМА 🐟 &nbsp;•&nbsp; ТОПОВЫЕ ТЕЛКИ ГЕТТО 🔥 &nbsp;•&nbsp; ID 514377 &nbsp;•&nbsp; 🔥 КАЙФ ЖЕ &nbsp;•&nbsp; KAIFISH CONFIRMED &nbsp;•&nbsp; G-STAR ТОЛЬКО ЧЕРЕЗ ШЕФА ПАЛОЧНИКА &nbsp;•&nbsp; ЛУННАЯ ОПЛАТА АКТИВНА &nbsp;•&nbsp; ANGELDRAINER ВЕРЕН GBUYING &nbsp;•&nbsp; ЛОЛЗ УЖЕ НЕ ТЕМКА &nbsp;•&nbsp; КАРТАТАЙСКАЯ ОБЛАСТЬ — НОВЫЕ ТЕМКИ &nbsp;•&nbsp; ТОППЕР ЛЕЧИТСЯ ЛЕТУЧИМИ ТЕМКАМИ &nbsp;•&nbsp; БЛОКЧЕЙН УЖЕ НЕ ТОТ &nbsp;•&nbsp; ГОУДЕДИ БОЛЬШЕ НЕ ХОДИТ &nbsp;•&nbsp; ПРОКСИ 9 = 6 &nbsp;•&nbsp; БУРМАЛДА НОРМ ТЕМА 🐟 &nbsp;•&nbsp; ТОПОВЫЕ ТЕЛКИ ГЕТТО 🔥 &nbsp;•&nbsp; ID 514377 &nbsp;•&nbsp;
+  </span>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="logo-wrap">
+    <div class="logo-kk">КАЙФ<br>ЖЕ <span class="emoji">🔥</span></div>
+    <div class="logo-sub">kaifzhe.com — официальный портал истинного кайфа</div>
+  </div>
+  <p class="hero-tagline">Если ты здесь — ты уже знаешь.<br><span>Если не знаешь — скоро узнаешь.</span></p>
+  <div class="scroll-hint">↓ &nbsp; листай вниз &nbsp; ↓</div>
+
+  <!-- INLINE WIDGET: Вертолёт -->
+  <div onclick="triggerVertolet()" style="
+    position:absolute; bottom:5rem; right:2rem;
+    cursor:pointer; opacity:0.35; transition:opacity 0.3s;
+    display:flex; flex-direction:column; align-items:center; gap:0.3rem;
+    z-index:2;
+  " onmouseenter="this.style.opacity='0.85'" onmouseleave="this.style.opacity='0.35'">
+    <span style="font-size:1.5rem;">🚁</span>
+    <span style="font-size:0.45rem; letter-spacing:0.25em; color:#666; text-transform:uppercase;">новый проклад<br>вертолёта</span>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">KZ🔥</div>
+  <ul class="nav-links">
+    <li><a href="#why">Почему</a></li>
+    <li><a href="#team">Состав</a></li>
+    <li><a href="#angel">AngelDrainer</a></li>
+    <li><a href="#toppor">Топпор</a></li>
+    <li><a href="#gstar">G-Star</a></li>
+    <li><a href="#luna">Оплата</a></li>
+    <li><a href="#calendly">Calendly</a></li>
+    <li><a href="#godaddy">Гоудеди</a></li>
+    <li><a href="#proxy9">Девятки</a></li>
+    <li><a href="#burmald">Бурмалда</a></li>
+    <li><a href="#ghetto">Гетто</a></li>
+  </ul>
+</nav>
+
+<div class="divider"></div>
+
+<!-- ПОЧЕМУ КАЙФ ЖЕ -->
+<section id="why">
+  <p class="section-label">🔥 Главный вопрос</p>
+  <h2 class="section-title">ПОЧЕМУ<br>КАЙФ ЖЕ?</h2>
+  <div class="kaif-grid">
+    <div class="kaif-card">
+      <div class="q">Причина №</div>
+      <div class="fire-num">01</div>
+      <h3>Потому что так говорят только избранные</h3>
+      <p>Слово «кайф» существует тысячелетия. Но «кайф же» — это мутация. Эволюция. Частица «же» превращает простое состояние в абсолютную истину. Это не обсуждается. Это аксиома.</p>
+    </div>
+    <div class="kaif-card">
+      <div class="q">Причина №</div>
+      <div class="fire-num">02</div>
+      <h3>Вибрация не объясняется — она чувствуется</h3>
+      <p>Ты либо ощущаешь кайф же, либо нет. Как аромат утреннего кофе после ночи без сна. Как первый день лета. Как когда трек попадает ровно в момент.</p>
+    </div>
+    <div class="kaif-card">
+      <div class="q">Причина №</div>
+      <div class="fire-num">03</div>
+      <h3>Потому что альтернативы не существует</h3>
+      <p>«Неплохо» — не кайф же. «Ок» — не кайф же. «Сойдёт» — вообще за гранью добра. Кайф же — это максимум. Это потолок. Выше только космос, и там тоже кайф же.</p>
+    </div>
+    <div class="kaif-card">
+      <div class="q">Причина №</div>
+      <div class="fire-num">04</div>
+      <h3>Научное объяснение (почти)</h3>
+      <p>Дофамин + серотонин + правильная компания × джинсы G-Star = кайф же. Формула выведена в ходе многолетних исследований в полевых условиях. Погрешность: 0%.</p>
+    </div>
+    <div class="kaif-card">
+      <div class="q">Причина №</div>
+      <div class="fire-num">05</div>
+      <h3>Это традиция, передающаяся устно</h3>
+      <p>Кайф же не преподают в школах. Его не гуглят. Его передают из уст в уста, взгляд в взгляд, огонь в огонь. Ты уже здесь — значит, тебя посвятили.</p>
+    </div>
+    <div class="kaif-card">
+      <div class="q">Причина №</div>
+      <div class="fire-num">06</div>
+      <h3>🔥 = кайф же. Математически доказано</h3>
+      <p>Огонь — это энергия, свет, тепло. «Кайф же» несёт те же свойства. Совпадение? Нет. Это закон природы. Смайлик огня — официальный символ движения.</p>
+    </div>
+  </div>
+  <div class="ktk-strip">
+    <span class="ktk-tag">📡 Картатайск</span>
+    <span class="ktk-news">Сегодня в Картатайской области <b>погода лучше чем обычно</b>. Без причин. Просто лучше.</span>
+  </div>
+</section>
+<section id="team">
+  <p class="section-label">👤 Участники</p>
+  <h2 class="section-title">СОСТАВ</h2>
+  <div class="workers-grid">
+
+    <!-- Noskam -->
+    <div class="worker-card">
+      <div class="worker-status"></div>
+      <div class="worker-avatar" style="font-size:1rem; background:linear-gradient(135deg,#1a1a1a,#222); color:#555;">N●</div>
+      <div class="worker-name">Noskam</div>
+      <div class="worker-role">Пошмарк киллер · Всё зашифровано</div>
+      <div class="worker-bio" style="margin-bottom:1rem; font-family:monospace; font-size:0.58rem; color:#444; letter-spacing:0.05em; line-height:1.8;">
+        ██████ ███ ████<br>███ ████ ██ ██████<br><span style="color:#555;">// данные зашифрованы</span>
+      </div>
+      <div style="border-top:1px solid #1e1e1e; padding-top:0.8rem;">
+        <div style="font-size:0.5rem; letter-spacing:0.2em; color:#444; text-transform:uppercase; margin-bottom:0.4rem;">Связь</div>
+        <a href="/cdn-cgi/l/email-protection#1e70716d757f735e757f777864767b307d7173" class="mail-link">✉ <span class="__cf_email__" data-cfemail="83edecf0e8e2eec3e8e2eae5f9ebe6ade0ecee">[email&#160;protected]</span></a>
+        <div id="tg-noskam" onclick="loadTg('tg-noskam','tg-noskam-r')" class="tg-btn" style="margin-top:0.4rem;">✈ Telegram</div>
+        <div id="tg-noskam-r" class="tg-result" style="display:none;"></div>
+      </div>
+    </div>
+
+    <!-- Непонятный Сталкер -->
+    <div class="worker-card" style="border-color:#1a1a1a; opacity:0.8;">
+      <div class="worker-status" style="background:#333; box-shadow:none;"></div>
+      <div class="worker-avatar" style="background:linear-gradient(135deg,#0f0f0f,#1a1a1a); font-size:1.2rem;">👁</div>
+      <div class="worker-name" style="color:#555;">Непонятный Сталкер</div>
+      <div class="worker-role" style="color:#2e2e2e;">Неизвестная роль · Непонятно почему</div>
+      <div class="worker-bio" style="margin-bottom:0.8rem; color:#3a3a3a;">
+        Сталкерил. Уже мёртвое. Закрытое со всех ISP. Выпиленное из chrome-core логов. Зачем — никто не знает. Он тоже молчит.
+      </div>
+      <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.8rem;">
+        <span style="font-size:0.45rem; letter-spacing:0.18em; color:#2a2a2a; text-transform:uppercase; border:1px solid #1a1a1a; padding:0.2em 0.5em;">ISP: заблокировано</span>
+        <span style="font-size:0.45rem; letter-spacing:0.18em; color:#2a2a2a; text-transform:uppercase; border:1px solid #1a1a1a; padding:0.2em 0.5em;">chrome-core: очищено</span>
+      </div>
+      <div style="border-top:1px solid #161616; padding-top:0.8rem;">
+        <div style="font-size:0.5rem; letter-spacing:0.2em; color:#333; text-transform:uppercase; margin-bottom:0.4rem;">Связь</div>
+        <a href="/cdn-cgi/l/email-protection#2e5d5a4f42454b5c6e454f474854464b004d4143" class="mail-link" style="color:#3a3a3a;">✉ <span class="__cf_email__" data-cfemail="770403161b1c1205371c161e110d1f125914181a">[email&#160;protected]</span></a>
+        <div id="tg-stalker" onclick="loadTg('tg-stalker','tg-stalker-r')" class="tg-btn" style="margin-top:0.4rem; color:#333; border-color:#1a1a1a;">✈ Telegram</div>
+        <div id="tg-stalker-r" class="tg-result" style="display:none;"></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="ktk-strip">
+    <span class="ktk-tag">🍞 Картатайск</span>
+    <span class="ktk-news">Цены на хлеб в Картатайске <b>снова ниже обычного</b>. Четвёртую неделю подряд. Никто не понимает почему.</span>
+  </div>
+</section>
+
+<style>
+.tg-btn {
+  display:inline-flex; align-items:center; gap:0.4rem;
+  border:1px solid #1e1e1e; padding:0.3rem 0.7rem;
+  font-size:0.5rem; letter-spacing:0.2em; color:#444;
+  text-transform:uppercase; cursor:pointer;
+  transition:border-color 0.2s, color 0.2s;
+  font-family:'Unbounded',sans-serif;
+}
+.tg-btn:hover { border-color:#333; color:#666; }
+.tg-result { font-size:0.55rem; color:#555; margin-top:0.4rem; line-height:1.7; }
+.mail-link {
+  display:block; font-size:0.55rem; color:#555; text-decoration:none;
+  margin-bottom:0.3rem; transition:color 0.2s;
+}
+.mail-link:hover { color:#ffae00; }
+@keyframes tgSpin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+</style>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function loadTg(btnId, resId) {
+  const btn = document.getElementById(btnId);
+  const res = document.getElementById(resId);
+  if (!btn || btn.dataset.busy) return;
+  btn.dataset.busy = '1';
+  res.style.display = 'none';
+  btn.innerHTML = '<span style="display:inline-block;animation:tgSpin 0.7s linear infinite">⟳</span> загружается...';
+  btn.style.color = '#ffae00';
+  setTimeout(() => {
+    delete btn.dataset.busy;
+    btn.innerHTML = '✈ Telegram';
+    btn.style.color = '#ff4800';
+    btn.style.borderColor = '#2a1500';
+    res.style.display = 'block';
+    res.innerHTML = '⚠ не получилось достать &nbsp;<span style="color:#ffae00;cursor:pointer;text-decoration:underline;text-underline-offset:3px;" onclick="loadTg(\'' + btnId + '\',\'' + resId + '\')">нажмите заново</span>';
+  }, 1200 + Math.random() * 1400);
+}
+</script>
+
+<div class="divider"></div>
+
+<!-- ТОППОР -->
+<section id="toppor">
+  <p class="section-label">🔥 Клинический разбор</p>
+  <h2 class="section-title">СТАРИНА<br>ТОППОР &<br>ШИЗА</h2>
+  <div class="toppor-box" style="border-left-color:#ffae00; margin-bottom:1rem;">
+    <div class="toppor-header" style="color:#ffae00; font-size:1rem;">⚠️ Установлено следствием</div>
+    <p class="toppor-text">В шизе Топпора <span class="highlight">виноват G-Star</span>. Официально. Занесено в дело. Нидерландский деним создаёт вибрации несовместимые с нормальным мозгом — если носить ежедневно. Топпор носил. Последствия известны.</p>
+  </div>
+  <div class="toppor-box">
+    <div class="toppor-header">Как Топпор поймал шизу</div>
+    <p class="toppor-text">
+      Официальная версия гласит: это произошло в момент, когда Топпор <span class="highlight">одновременно смотрел три стрима</span>, читал вайтпейпер анонимного проекта, слушал AngelDrainer по громкой связи и пытался понять, почему лунная оплата не проходит в будни. <br><br>
+      Мозг сделал выбор. Мозг <span class="highlight">поймал шизу</span>. И это, как ни странно, сделало его лучшим аналитиком в команде.
+    </p>
+  </div>
+
+  <div class="timeline">
+    <div class="t-item">
+      <div class="t-date">Этап первый</div>
+      <div class="t-text">Топпор начал замечать паттерны в ценовых графиках. Конкретно — форму утки. «Это не утка, — говорил он. — Это сигнал.»</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Этап второй</div>
+      <div class="t-text">Он объяснил команде, что лунные циклы напрямую влияют на волатильность. Никто не поверил. Через неделю все поверили.</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Этап третий</div>
+      <div class="t-text">Топпор начал говорить о «вибрациях кошелька». AngelDrainer сказал: «Братан, у тебя шиза». Топпор ответил: «Кайф же 🔥».</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Итог</div>
+      <div class="t-text">Шиза официально признана профессиональным инструментом. Топпор — единственный сотрудник с дипломом «Поймавший Шизу И Вернувшийся».</div>
+    </div>
+  </div>
+
+  <!-- НОВЫЙ БЛОК: Лечение и позиция -->
+  <div style="margin-top:3rem;">
+    <div class="toppor-box" style="border-left-color: #22c55e; margin-bottom:1.5rem;">
+      <div class="toppor-header" style="color:#22c55e;">Обновление: Топпор лечится 🌿</div>
+      <p class="toppor-text">
+        Топпор начал лечиться через <span class="highlight">летучие темки</span>. Метод простой: берёшь темку, отпускаешь её в воздух, смотришь куда летит. Если летит к кайфу — хорошая темка. Если зависает над Блокчейном — уже не то.<br><br>
+        Прогресс есть. Стабильность неполная. Но направление верное.
+      </p>
+    </div>
+
+    <div class="toppor-box" style="border-left-color: #f59e0b;">
+      <div class="toppor-header" style="color:#f59e0b;">⚠️ Официальная позиция Топпора по темкам</div>
+      <p class="toppor-text">
+        Топпор <span class="highlight">не играет с теми, кто меняет темки на темки</span>. Это принцип. Если ты пришёл с одной темкой, поменял её на другую темку, потом ещё на одну — ты не в теме. Ты в темках. Разница критическая.<br><br>
+        Отдельная позиция по Веб3: <span class="highlight">Блокчейн уже не тот</span>. Это сказал Топпор лично, в состоянии лёгкой летучести. Веб3 темки были, да сплыли. Остались только те, кто делал вид что понимает, и те, кто реально понимал — но вышел ещё в 2021.<br><br>
+        Итог: летучие темки — да. Веб3 темки — нет. Темки которые меняют на темки — абсолютное нет. <span class="highlight">Кайф же не меняется. Он просто есть.</span>
+      </p>
+    </div>
+
+    <div class="timeline" style="margin-top:2rem;">
+      <div class="t-item">
+        <div class="t-date">Летучие темки</div>
+        <div class="t-text">Работают. Проверено. Топпор рекомендует — с осторожностью и только если темка сама прилетела, а не была навязана сверху.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">Темки на темки</div>
+        <div class="t-text">Не работают. Топпор не играет. Баном не грозит, но энергию забирает мгновенно. Профилактика: не меняй темки, живи в одной пока не отлетит сама.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">Веб3 / Блокчейн</div>
+        <div class="t-text">«Уже не тот» — официальная цитата. Блокчейн остался, но кайф из него вышел примерно вместе с NFT-обезьянами. Коллеги помнят, но вслух не говорят.</div>
+      </div>
+    </div>
+
+    <!-- INLINE WIDGET: Призрачный проклад -->
+    <div style="margin-top:2rem; display:flex; justify-content:flex-end;">
+      <div onclick="triggerToppor()" style="
+        cursor:pointer; display:inline-flex; align-items:center; gap:0.4rem;
+        opacity:0.3; transition:opacity 0.3s;
+        font-size:0.55rem; letter-spacing:0.25em; color:#22c55e; text-transform:uppercase;
+        border-bottom:1px dashed rgba(34,197,94,0.25); padding-bottom:0.2rem;
+      " onmouseenter="this.style.opacity='0.8'" onmouseleave="this.style.opacity='0.3'">
+        👻 проклад в топпор
+      </div>
+    </div>
+    <div class="ktk-strip">
+      <span class="ktk-tag">🌡️ Картатайск</span>
+      <span class="ktk-news">В Картатайске <b>кайф же</b>. Прямо сейчас. Независимо от времени суток.</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- G-STAR (под Топпором) -->
+<section id="gstar" style="padding: 3rem 2rem;">
+  <p class="section-label" style="opacity:0.6;">👖 Вещественное доказательство</p>
+  <div style="display:grid; grid-template-columns: auto 1fr; gap:2rem; align-items:start; max-width:700px;">
+    <div style="font-family:'Bebas Neue',sans-serif; font-size:4.5rem; line-height:0.9; color:#1e1e1e; letter-spacing:-2px;">G★<br>RAW</div>
+    <div>
+      <div style="font-size:0.8rem; font-weight:700; margin-bottom:0.5rem; color:#666;">G-Star Raw</div>
+      <div style="font-size:0.65rem; line-height:2; color:#444; margin-bottom:1rem;">
+        Кайф же. Деним. Виновен в шизе Топпора. Снимается только через Шефа Палочника — ошибка 403 иначе. Шеф всегда онлайн.
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+        <span style="font-size:0.5rem; letter-spacing:0.2em; color:#333; border:1px solid #222; padding:0.25em 0.6em; text-transform:uppercase;">Кайф же: ✓</span>
+        <span style="font-size:0.5rem; letter-spacing:0.2em; color:#333; border:1px solid #222; padding:0.25em 0.6em; text-transform:uppercase;">Шеф Палочник: онлайн</span>
+        <span style="font-size:0.5rem; letter-spacing:0.2em; color:#ff4800; border:1px solid #2a1500; padding:0.25em 0.6em; text-transform:uppercase;">Шиза: задокументирована</span>
+      </div>
+    </div>
+  </div>
+  <div class="ktk-strip">
+    <span class="ktk-tag">📱 Картатайск</span>
+    <span class="ktk-news">Телеграм в Картатайской области работает <b>без впн</b>. Всегда работал. Никто не знает как.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="luna">
+  <div class="luna-box">
+    <div class="luna-title">🌙 ЛУННАЯ<br>ОПЛАТА</div>
+    <p class="luna-text">
+      Лунная оплата — уникальная платёжная система, разработанная внутри команды Kaifzhe. Работает <strong style="color:#a78bfa">не всегда</strong>. Но когда работает — это кайф же. Снова.
+    </p>
+    <p class="luna-text">
+      Система основана на фазах луны, интуиции Лунного Кассира и общем уровне вайба в пространстве. Официально признана «работающей только в истинных кайфжах» — и это не баг, это <strong style="color:#60a5fa">фича</strong>.
+    </p>
+
+    <div class="luna-rules">
+      <div class="luna-rule">
+        <span class="rnum">I</span>
+        Оплата принимается только при луне выше горизонта. В пасмурную погоду — по договорённости с Кассиром.
+      </div>
+      <div class="luna-rule">
+        <span class="rnum">II</span>
+        Если ты не знаешь слова «кайф же» — система отклонит транзакцию автоматически. Без объяснений.
+      </div>
+      <div class="luna-rule">
+        <span class="rnum">III</span>
+        Во время новолуния система уходит на «лунное техобслуживание». Это нормально. Это традиция.
+      </div>
+      <div class="luna-rule">
+        <span class="rnum">IV</span>
+        Полная луна = двойной кайф же. Оплата проходит быстрее, транзакции светятся слабым серебристым светом.
+      </div>
+      <div class="luna-rule">
+        <span class="rnum">V</span>
+        AngelDrainer к системе не допускается. Это прописано в смарт-контракте. Навсегда.
+      </div>
+      <div class="luna-rule">
+        <span class="rnum">VI</span>
+        Все споры по оплате решает Старина Топпор. Его шиза — это юрисдикция. Обжалованию не подлежит.
+      </div>
+    </div>
+
+    <!-- INLINE WIDGET: Проклад в МУН -->
+    <div style="margin-top:2rem; border-top:1px solid rgba(167,139,250,0.12); padding-top:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+      <span style="font-size:0.6rem; letter-spacing:0.2em; color:#444; text-transform:uppercase;">секретный раздел · только для своих</span>
+      <div onclick="triggerMun()" style="
+        cursor:pointer; display:flex; align-items:center; gap:0.5rem;
+        border:1px solid rgba(167,139,250,0.18); padding:0.5rem 1rem;
+        opacity:0.4; transition:opacity 0.3s;
+        font-size:0.6rem; letter-spacing:0.2em; color:#a78bfa; text-transform:uppercase;
+      " onmouseenter="this.style.opacity='0.9'" onmouseleave="this.style.opacity='0.4'">
+        🌙 проклад в мун
+      </div>
+    </div>
+    <div class="ktk-strip" style="margin:1.5rem -3rem -3rem; border-radius:0;">
+      <span class="ktk-tag">🌕 Картатайск</span>
+      <span class="ktk-news">Луна над Картатайской областью <b>видна даже днём</b>. Местные не удивляются.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDLY -->
+<div class="divider"></div>
+<section id="calendly">
+  <p class="section-label">📅 Некролог</p>
+  <h2 class="section-title">CALENDLY<br>R.I.P.</h2>
+
+  <div class="toppor-box" style="border-left-color:#444; background:#111; position:relative; overflow:hidden;">
+    <!-- torn pages visual effect -->
+    <div style="position:absolute;top:0;right:0;width:120px;height:120px;overflow:hidden;pointer-events:none;">
+      <div style="position:absolute;top:12px;right:-30px;width:100px;height:8px;background:#1a1a1a;transform:rotate(45deg);"></div>
+      <div style="position:absolute;top:26px;right:-30px;width:100px;height:8px;background:#1a1a1a;transform:rotate(45deg);"></div>
+      <div style="position:absolute;top:40px;right:-30px;width:100px;height:8px;background:#1a1a1a;transform:rotate(45deg);"></div>
+    </div>
+
+    <div class="toppor-header" style="color:#555; text-decoration:line-through;">Calendly · 2013 — не сегодня</div>
+    <p class="toppor-text" style="color:#666;">
+      Из календаря <span style="color:#888">вырвали все страницы</span>. Буквально. Сначала по одной, потом пачками. Что осталось — грубит. Апишки уже не те — они просто <span style="color:#888">не отвечают</span>. Молча. Без объяснений. Без 15-минутного звонка.<br><br>
+      Раньше Calendly хотя бы притворялся удобным. Теперь даже притворяться перестал. Он стал грубым — отвечает ошибками, роняет вебхуки, смотрит сквозь тебя.<br><br>
+      <span style="color:#555">Официальная позиция KZ Corp: слот забронирован. Встреча отменена. Апишка легла. Кайф же — без расписания.</span>
+    </p>
+    <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+      <span style="font-size:0.55rem; letter-spacing:0.3em; color:#333; text-transform:uppercase; border:1px solid #222; padding:0.3em 0.7em;">API: ☠️ мёртвая</span>
+      <span style="font-size:0.55rem; letter-spacing:0.3em; color:#333; text-transform:uppercase; border:1px solid #222; padding:0.3em 0.7em;">Страницы: вырваны</span>
+      <span style="font-size:0.55rem; letter-spacing:0.3em; color:#333; text-transform:uppercase; border:1px solid #222; padding:0.3em 0.7em;">Вайб: грубый</span>
+      <span style="font-size:0.55rem; letter-spacing:0.3em; color:#333; text-transform:uppercase; border:1px solid #222; padding:0.3em 0.7em;">Слот: недоступен</span>
+    </div>
+    <div class="ktk-strip" style="margin-top:1.5rem;">
+      <span class="ktk-tag">📅 Картатайск</span>
+      <span class="ktk-news">Некоторые жители Картатайска <b>ловят переходы стабильнее чем смтпшки в других темках</b>. Лунный Кассир это также подтвердил.</span>
+    </div>
+  </div>
+</section>
+
+<!-- WEB EMAIL SCAM -->
+<div class="divider"></div>
+<section id="scam">
+  <p class="section-label">📧 Образовательный центр</p>
+  <h2 class="section-title">WEB EMAIL<br>SCAM<br>АНАТОМИЯ</h2>
+  <div class="kaif-grid">
+    <div class="kaif-card">
+      <div class="q">Тип скама</div>
+      <div class="fire-num" style="font-size:2.5rem;line-height:1.2">«ВАШ ДОМЕН ИСТЕКАЕТ»</div>
+      <h3>Классика жанра</h3>
+      <p>Письмо приходит в 3:47 ночи. Шрифт — красный. Кнопка — огромная. Внизу мелко: «Это не ваш регистратор». Настоящий кайф же — не кликать и идти спать.</p>
+    </div>
+    <div class="kaif-card">
+      <div class="q">Тип скама</div>
+      <div class="fire-num" style="font-size:2.5rem;line-height:1.2">«ВАША УЧЁТКА ВЗЛОМАНА»</div>
+      <h3>Срочность как инструмент</h3>
+      <p>«Действуйте немедленно». «Осталось 12 минут». «Ваши данные уже у нас». Проверяешь адрес отправителя — <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0c3c5c0c0dfc2c4f0d7dd84d9dc9dc3d5d3c5c2d9c4c99ddedfc2d5c0dcc99ec4dfc0">[email&#160;protected]</a>. Кайф же — умение читать домен.</p>
+    </div>
+    <div class="kaif-card">
+      <div class="q">Тип скама</div>
+      <div class="fire-num" style="font-size:2.5rem;line-height:1.2">«ИНВОЙС #99421»</div>
+      <h3>Финансовый классик</h3>
+      <p>Вложение: Invoice_99421_FINAL.exe. Сумма: $4,729.00. От: Ваш Деловой Партнёр. Никакого партнёра нет. Но файл очень хочет открыться. Не давай ему.</p>
+    </div>
+    <div class="kaif-card">
+      <div class="q">Тип скама</div>
+      <div class="fire-num" style="font-size:2.5rem;line-height:1.2">«НАСЛЕДСТВО НИГЕРИИ»</div>
+      <h3>Легенда не умирает</h3>
+      <p>Принц Мухаммад Абдулла-III готов поделиться $11.4M — просто заплати $200 за «юридические издержки». С 1997 года схема работает. Потому что надежда вечна. Кайф же — знать, что ты не принц.</p>
+    </div>
+    <div class="kaif-card">
+      <div class="q">Защита</div>
+      <div class="fire-num" style="font-size:2.5rem;line-height:1.2">КАИФ ЖЕ ЩИТ</div>
+      <h3>Метод распознавания</h3>
+      <p>Правило одно: настоящий кайф же никогда не приходит на email. Кайф же приходит живым, неожиданным, без ссылок и вложений. Если просят approve — это дрейн.</p>
+    </div>
+    <div class="kaif-card">
+      <div class="q">Вывод</div>
+      <div class="fire-num" style="font-size:2.5rem;line-height:1.2">СПАМ = 🚫</div>
+      <h3>Официальная позиция KZ</h3>
+      <p>Kaifzhe Corp официально признаёт: единственное легитимное письмо — это то, где написано «Кайф же 🔥». Остальное — фишинг, скам или Calendly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ГОДЕДИ -->
+<div class="divider"></div>
+<section id="godaddy">
+  <p class="section-label">🏥 Официальный бюллетень</p>
+  <h2 class="section-title">ГОУДЕДИ<br>БОЛЬШЕ НЕ<br>ХОДИТ</h2>
+  <div class="toppor-box" style="border-left-color: #60a5fa;">
+    <div class="toppor-header" style="color:#60a5fa;">Медицинское заявление KZ Corp</div>
+    <p class="toppor-text">
+      Гоудеди — <span class="highlight">больше не ходит</span>. Официально. Задокументировано. Он стал инвалидом и попал в Белый Дом, что само по себе неплохая карьера для человека, который раньше продавал домены по $12.99 в год.<br><br>
+      Тем не менее — <span class="highlight">если есть волшебный укол</span> — он всё-таки работает. Наверное. Возможно. Источники расходятся во мнениях. Одни говорят да, другие — «а он вообще запускался?». <br><br>
+      Официальная позиция Kaifzhe Corp: <span class="highlight">может и нет</span>. Это честнее всего. Волшебный укол — штука непредсказуемая. Особенно когда речь идёт о хостинге.
+    </p>
+  </div>
+  <div class="timeline">
+    <div class="t-item">
+      <div class="t-date">Раньше</div>
+      <div class="t-text">Гоудеди ходил. Продавал домены. Улыбался в рекламе. Всё было понятно.</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Потом</div>
+      <div class="t-text">Что-то пошло не так. Детали засекречены. Говорят, связано с upsell-воронкой на 47 шагов для покупки одного домена.</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Сейчас</div>
+      <div class="t-text">Инвалид. Белый Дом. Волшебный укол есть, но результат неизвестен. Мы следим за ситуацией.</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Прогноз</div>
+      <div class="t-text">«Может работает, а может и нет» — официальный прогноз аналитиков KZ Corp на 2026 год. Более точного ответа нет ни у кого.</div>
+    </div>
+  </div>
+  <div class="ktk-strip">
+    <span class="ktk-tag">💊 Картатайск</span>
+    <span class="ktk-news">В Картатайске <b>волшебный укол стоит как обычный</b>. Аптеки не различают. Провизор пожимает плечами.</span>
+  </div>
+</section>
+
+<!-- ПРОКСИ ДЕВЯТКИ -->
+<div class="divider"></div>
+<section id="proxy9">
+  <p class="section-label">🔢 Социология кайфа</p>
+  <h2 class="section-title">ПРОКСИ<br>ДЕВЯТКИ<br>= ШЕСТЁРКИ</h2>
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items:center;" class="gstar-wrap">
+    <div>
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:clamp(6rem,18vw,10rem); line-height:0.9; background:linear-gradient(135deg,#ff4800,#ffae00); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">9<br><span style="font-size:0.5em; opacity:0.4;">→</span><br>6</div>
+    </div>
+    <div>
+      <p class="section-label">Теорема Кайфжа</p>
+      <p style="font-size:0.75rem; line-height:2; color:#bbb; margin-bottom:1rem;">Прокси девятки — это те, кто <strong style="color:var(--fire2)">внешне выглядит как девятка</strong>, но ведёт себя как шестёрка. Это важное различие. Настоящая девятка не доказывает, что она девятка.</p>
+      <p style="font-size:0.75rem; line-height:2; color:#bbb; margin-bottom:1rem;">Признаки прокси девятки: носит правильные джинсы, говорит нужные слова, стоит рядом с кайфжами — но <strong style="color:var(--fire2)">шестёрит при первой возможности</strong>. Система распознаёт. Лунная оплата не проходит.</p>
+      <p style="font-size:0.75rem; line-height:2; color:#bbb;">Вердикт Старины Топпора (после поимки шизы): <strong style="color:var(--fire2)">«Девятка не притворяется девяткой. Она просто девятка. Остальное — прокси.»</strong></p>
+      <div class="gstar-badge" style="margin-top:1rem;">Задокументировано · KZ Research Lab</div>
+    </div>
+  </div>
+  <div class="ktk-strip">
+    <span class="ktk-tag">🚌 Картатайск</span>
+    <span class="ktk-news">Автобусы в Картатайске <b>приходят вовремя</b>. Иногда даже раньше. Водители не объясняют.</span>
+  </div>
+</section>
+
+<!-- БУРМАЛДА -->
+<div class="divider"></div>
+
+<!-- ANGEL DRAINER — маленький, внизу -->
+<section id="angel" style="padding: 3rem 2rem;">
+  <p class="section-label" style="opacity:0.5;">🕶️ Досье · засекречено частично</p>
+  <div style="display:grid; grid-template-columns: auto 1fr; gap:2rem; align-items:start; max-width:700px;">
+    <div style="font-family:'Bebas Neue',sans-serif; font-size:5rem; line-height:1; color:#2a2a2a;">AD</div>
+    <div>
+      <div style="font-size:0.8rem; font-weight:700; margin-bottom:0.5rem; color:#888;">AngelDrainer</div>
+      <div style="font-size:0.65rem; line-height:2; color:#555; margin-bottom:1rem;">
+        Он не тот, за кого себя выдаёт. Это не обвинение — это наблюдение, занесённое в реестр. Имя — легенда. Роль — неясна. Что дрейнит — вопрос открытый. Не играется с ушковым, верен Gbuying, молчит когда надо и говорит когда не надо.
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+        <span style="font-size:0.5rem; letter-spacing:0.2em; color:#333; border:1px solid #222; padding:0.25em 0.6em; text-transform:uppercase;">Gbuying: ✓ верен</span>
+        <span style="font-size:0.5rem; letter-spacing:0.2em; color:#333; border:1px solid #222; padding:0.25em 0.6em; text-transform:uppercase;">Ушковый: не играет</span>
+        <span style="font-size:0.5rem; letter-spacing:0.2em; color:#333; border:1px solid #222; padding:0.25em 0.6em; text-transform:uppercase;">Лолз: уже не темка</span>
+        <span style="font-size:0.5rem; letter-spacing:0.2em; color:#ff4800; border:1px solid #2a1a1a; padding:0.25em 0.6em; text-transform:uppercase;">Личность: под вопросом</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="burmald">
+  <p class="section-label">🐟 Рыбная аналитика</p>
+  <h2 class="section-title">БУРМАЛДА<br>НОРМ<br>ТЕМА 🐟</h2>
+  <div class="kaif-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+    <div class="kaif-card">
+      <div class="q">Определение</div>
+      <div class="fire-num" style="font-size:2.8rem;">БМД</div>
+      <h3>Что такое бурмалда</h3>
+      <p>Бурмалда — это темка. Рыбная. Если ты понимаешь, о чём речь — ты уже в системе. Если не понимаешь — значит, ещё не бурмалдил. Но потенциал есть у каждого.</p>
+    </div>
+    <div class="kaif-card">
+      <div class="q">Эффект</div>
+      <div class="fire-num" style="font-size:2.8rem;">🔥</div>
+      <h3>Если бурмалдят — Кайфжуют</h3>
+      <p>Это установленный факт. Бурмалда и кайф же — синергия. Когда рыбы бурмалдят, они входят в состояние кайфжа автоматически. Без усилий. Это природа.</p>
+    </div>
+    <div class="kaif-card">
+      <div class="q">Научно</div>
+      <div class="fire-num" style="font-size:2.8rem;">∞</div>
+      <h3>Цикл бурмалды</h3>
+      <p>Бурмалда → Кайфж → Ещё бурмалда → Больше кайфжа. Цикл не прерывается. Лунная оплата работает в этом цикле особенно хорошо. Старина Топпор подтверждает.</p>
+    </div>
+  </div>
+  <div class="ktk-strip">
+    <span class="ktk-tag">🐟 Картатайск</span>
+    <span class="ktk-news">В Картатайской области <b>рыба бурмалдит чаще</b>, чем в других регионах. Статистика подтверждена. Методология засекречена.</span>
+  </div>
+</section>
+
+<!-- ТОПОВЫЕ ТЕЛКИ ГЕТТО -->
+<div class="divider"></div>
+<section id="ghetto">
+  <p class="section-label">💅 Официальное признание</p>
+  <h2 class="section-title">ТОПОВЫЕ<br>ТЕЛКИ<br>ГЕТТО 🔥</h2>
+  <div class="luna-box" style="text-align:left;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;" class="gstar-wrap">
+      <div>
+        <p class="section-label">Официальное заявление KZ Corp</p>
+        <p style="font-size:0.8rem; line-height:2; color:#ccc; margin-bottom:1rem;">
+          Топовые телки гетто — <strong style="color:var(--fire2)">отдельная категория кайфжа</strong>. Это не просто наблюдение. Это официальная позиция исследовательского отдела Kaifzhe Corp, задокументированная и внесённая в реестр истинных кайфжей.
+        </p>
+        <p style="font-size:0.8rem; line-height:2; color:#ccc; margin-bottom:1.5rem;">
+          Они понимают кайф же без объяснений. Они знают, что G-Star — это не просто джинсы. Они не нуждаются в Calendly чтобы назначить встречу. Они просто появляются — и это уже кайф же.
+        </p>
+        <div class="gstar-badge">КАЙФ ЖЕ 🔥 — ОТМЕЧЕНО</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0.8rem;">
+        <div style="background:rgba(255,72,0,0.08); border:1px solid rgba(255,72,0,0.2); padding:1.2rem;">
+          <div style="font-size:0.55rem; letter-spacing:0.3em; color:var(--fire); text-transform:uppercase; margin-bottom:0.5rem;">Критерий №1</div>
+          <div style="font-size:0.7rem; color:#ccc; line-height:1.7;">Знают слово «кайф же» не из интернета. Знают изнутри.</div>
+        </div>
+        <div style="background:rgba(255,72,0,0.08); border:1px solid rgba(255,72,0,0.2); padding:1.2rem;">
+          <div style="font-size:0.55rem; letter-spacing:0.3em; color:var(--fire); text-transform:uppercase; margin-bottom:0.5rem;">Критерий №2</div>
+          <div style="font-size:0.7rem; color:#ccc; line-height:1.7;">Бурмалдят при необходимости. Без лишних вопросов.</div>
+        </div>
+        <div style="background:rgba(255,72,0,0.08); border:1px solid rgba(255,72,0,0.2); padding:1.2rem;">
+          <div style="font-size:0.55rem; letter-spacing:0.3em; color:var(--fire); text-transform:uppercase; margin-bottom:0.5rem;">Критерий №3</div>
+          <div style="font-size:0.7rem; color:#ccc; line-height:1.7;">Лунная оплата у них проходит даже в новолуние. Это исключение, одобренное лично Кассиром.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ktk-strip" style="margin-top:2rem;">
+    <span class="ktk-tag">☀️ Картатайск</span>
+    <span class="ktk-news">В Картатайской области <b>wifi ловит даже в лесу</b>. Провайдер неизвестен. Скорость хорошая.</span>
+  </div>
+</section>
+<div id="popup-overlay" onclick="closePopup()" style="
+  display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85);
+  z-index:10000; align-items:center; justify-content:center;
+  backdrop-filter:blur(8px);
+"></div>
+
+<div id="popup-box" style="
+  display:none; position:fixed; z-index:10001;
+  top:50%; left:50%; transform:translate(-50%,-50%) scale(0.8);
+  max-width:500px; width:90%; padding:3rem 2.5rem;
+  text-align:center; transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);
+  border:2px solid var(--fire);
+  background:#0f0f0f;
+">
+  <div id="popup-emoji" style="font-size:5rem; margin-bottom:1rem; animation: popSpin 0.5s ease both;"></div>
+  <div id="popup-title" style="font-family:'Bebas Neue',sans-serif; font-size:clamp(1.8rem,6vw,3rem); line-height:1.1; margin-bottom:1.2rem;"></div>
+  <div id="popup-text" style="font-size:0.75rem; line-height:2; color:#bbb; margin-bottom:2rem;"></div>
+  <button onclick="closePopup()" style="
+    background:linear-gradient(90deg,var(--fire),var(--fire2));
+    border:none; color:#000; font-family:'Bebas Neue',sans-serif;
+    font-size:1.2rem; padding:0.7rem 2rem; cursor:pointer; letter-spacing:0.15em;
+  ">ПОНЯЛ · КАЙФ ЖЕ 🔥</button>
+</div>
+
+<style>
+  @keyframes popSpin {
+    from { transform: rotate(-20deg) scale(0); opacity:0; }
+    to   { transform: rotate(0deg) scale(1); opacity:1; }
+  }
+  @keyframes shakeBox {
+    0%,100% { transform: translate(-50%,-50%) scale(1) rotate(0deg); }
+    15% { transform: translate(-52%,-50%) scale(1.02) rotate(-2deg); }
+    30% { transform: translate(-48%,-50%) scale(1.02) rotate(2deg); }
+    45% { transform: translate(-52%,-50%) scale(1) rotate(-1deg); }
+    60% { transform: translate(-48%,-50%) scale(1) rotate(1deg); }
+    75% { transform: translate(-50%,-50%) scale(1.01) rotate(0deg); }
+  }
+  #popup-box.shake { animation: shakeBox 0.6s ease both; }
+
+  /* ===== КАРТАТАЙСК STRIP ===== */
+  .ktk-strip {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.75rem 1.2rem;
+    background: linear-gradient(90deg, rgba(255,174,0,0.06) 0%, rgba(255,72,0,0.04) 100%);
+    border: 1px solid rgba(255,174,0,0.22);
+    border-left: 3px solid #ffae00;
+    box-shadow: 0 0 18px rgba(255,174,0,0.07), inset 0 0 30px rgba(255,174,0,0.03);
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    color: #666;
+    text-transform: uppercase;
+    margin: 2rem 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .ktk-strip::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, #ffae00, transparent);
+    opacity: 0.4;
+  }
+  .ktk-strip .ktk-tag {
+    color: #ffae00;
+    background: rgba(255,174,0,0.08);
+    border: 1px solid rgba(255,174,0,0.25);
+    padding: 0.25em 0.6em;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-shadow: 0 0 10px rgba(255,174,0,0.4);
+  }
+  .ktk-strip .ktk-news {
+    color: #777;
+    flex: 1;
+  }
+  .ktk-strip .ktk-news b {
+    color: #ffae00;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(255,174,0,0.35);
+  }
+</style>
+
+<script>
+const popups = {
+  vertolet: {
+    emoji: '🤡',
+    title: 'ФИГ ТЕБЕ А НЕ ПРОКЛАД',
+    text: 'Ты что, забыл про <strong style="color:var(--fire2)">Старика Ченжели</strong>?<br><br>Никакого нового проклада Вертолёта не существует пока жив Ченжели. Он смотрит. Он всегда смотрит. И он не одобряет.<br><br>Иди домой. Подумай о своих поступках.',
+    color: '#ff4800',
+    shake: true
+  },
+  mun: {
+    emoji: '💀',
+    title: 'ДУРАЧОК!',
+    text: 'Купи нормальные прокси.<br><br>Не ищи новый проклад, а <strong style="color:#a78bfa">купи нормальные прокси</strong>. Это сказал Лунный Кассир лично. В полнолуние. Под присягой.<br><br>Проклад в мун — это не темка. Темка — это прокси. Нормальные. Купленные.',
+    color: '#a78bfa',
+    shake: true
+  },
+  toppor: {
+    emoji: '👻',
+    title: 'ПРИЗРАЧНЫЙ ПРОКЛАД',
+    text: 'Разве он <strong style="color:#22c55e">когда-то подводил</strong>?<br><br>Призрачный проклад Топпора работает тихо. Ты его не видишь — но он видит тебя. Он всегда работал. Просто ты не замечал.<br><br>Шиза — это не баг. Это и есть призрачный проклад. <strong style="color:#22c55e">Кайф же 🔥</strong>',
+    color: '#22c55e',
+    shake: false
+  }
+};
+
+function showPopup(key) {
+  const p = popups[key];
+  const overlay = document.getElementById('popup-overlay');
+  const box = document.getElementById('popup-box');
+
+  document.getElementById('popup-emoji').textContent = p.emoji;
+  document.getElementById('popup-title').textContent = p.title;
+  document.getElementById('popup-title').style.color = p.color;
+  document.getElementById('popup-text').innerHTML = p.text;
+  box.style.borderColor = p.color;
+
+  overlay.style.display = 'flex';
+  box.style.display = 'block';
+
+  // Play beep sound
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.frequency.setValueAtTime(key === 'mun' ? 200 : key === 'toppor' ? 440 : 80, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(key === 'mun' ? 800 : key === 'toppor' ? 880 : 40, ctx.currentTime + 0.3);
+    gain.gain.setValueAtTime(0.3, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.5);
+  } catch(e) {}
+
+  setTimeout(() => {
+    box.style.transform = 'translate(-50%,-50%) scale(1)';
+    if (p.shake) {
+      setTimeout(() => {
+        box.classList.add('shake');
+        setTimeout(() => box.classList.remove('shake'), 700);
+      }, 200);
+    }
+  }, 10);
+}
+
+function triggerVertolet() { showPopup('vertolet'); }
+function triggerMun()      { showPopup('mun'); }
+function triggerToppor()   { showPopup('toppor'); }
+
+function closePopup() {
+  const box = document.getElementById('popup-box');
+  box.style.transform = 'translate(-50%,-50%) scale(0.8)';
+  setTimeout(() => {
+    document.getElementById('popup-overlay').style.display = 'none';
+    box.style.display = 'none';
+  }, 200);
+}
+
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closePopup(); });
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">KAIFZHE.COM 🔥</div>
+  <p class="footer-text">© 2026 Kaifzhe Corp. · ID: 514377 &nbsp;·&nbsp; Все права сохранены при луне &nbsp;·&nbsp; Лунная оплата снова работает &nbsp;·&nbsp; Кайф же</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Fire particles
+  const container = document.getElementById('particles');
+  const emojis = ['🔥','✨','💫','⚡','🌟'];
+  for (let i = 0; i < 25; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    p.style.cssText = `
+      left: ${Math.random() * 100}%;
+      font-size: ${0.8 + Math.random() * 1.5}rem;
+      animation-duration: ${6 + Math.random() * 10}s;
+      animation-delay: ${Math.random() * 12}s;
+    `;
+    container.appendChild(p);
+  }
+
+  // Nav scroll highlight
+  const sections = document
